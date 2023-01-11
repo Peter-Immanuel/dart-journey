@@ -1,7 +1,1 @@
-String twoFer([String name=""]) {
-  if (name != ""){
-    return "One for $name, one for me.";
-  }
-  return "One for you, one for me.";
-
-}
+String twoFer([String name="you"]) => "One for $name, one for me.";
