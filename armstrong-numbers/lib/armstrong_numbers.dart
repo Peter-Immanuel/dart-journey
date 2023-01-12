@@ -6,13 +6,12 @@ class ArmstrongNumbers {
     int length = number.length;
     int total = 0;
 
-    for (int i=0; i<length; i++){
-        int equivalent_num = int.parse(number.substring(i, i+1));
-        total += pow(equivalent_num, length).toInt();
-    }
+    number.runes.forEach((int rune){
+      var equivalent_num = int.parse(new String.fromCharCode(rune));
+      total += pow(equivalent_num, length).toInt();
+    });
 
-    String str_total = total.toString();
-    if (str_total==number){
+    if (total.toString()==number){
         return true;
     }
     return false;
