@@ -7,18 +7,15 @@ class HighScores {
     }
 
     int personalBest(){
-        var listCopy = List.of(scores);
-        listCopy.sort();
-        return listCopy.last;
+        scores.sort();
+        return scores.last;
     }
 
     List<int> personalTopThree(){
-        var listCopy = List.of(scores);
-        listCopy.sort();
-        var result;
-        if (listCopy.length > 3){
-            return listCopy.sublist(listCopy.length - 3).reversed.toList(growable: false);
+        scores.sort();
+        if (scores.length > 3){
+            return scores.sublist(scores.length - 3).reversed.toList(growable: false);
         }
-        return listCopy.reversed.toList(growable: false);
+        return scores.reversed.toList(growable: false);
     }
 }
