@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fooderlich/fooderlich_theme.dart';
+import 'author_card.dart';
+import 'package:blur/blur.dart';
 
 class Card2 extends StatelessWidget {
   const Card2({super.key});
@@ -16,10 +19,36 @@ class Card2 extends StatelessWidget {
           ),
           borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
-        // child: Column(children: [
-        //   // TODO: Add Aurthor's information
-        //   // TODO: Add positioned texts
-        // ]),
+        child: Column(children: [
+          const AuthorCard(
+            authorName: "Mike Kartz",
+            title: "Smoothie Connoisseur",
+            imageProvider: AssetImage("assets/3d_avatar_13.png"),
+          ),
+          Expanded(
+            child: Stack(
+              children: [
+                Positioned(
+                    bottom: 16,
+                    right: 16,
+                    child: Text(
+                      "Recipe",
+                      style: FooderlichTheme.darkTextTheme.headline1,
+                    )),
+                Positioned(
+                    bottom: 70,
+                    left: 16,
+                    child: RotatedBox(
+                      quarterTurns: 3,
+                      child: Text(
+                        "Smoothies",
+                        style: FooderlichTheme.darkTextTheme.headline1,
+                      ),
+                    ))
+              ],
+            ),
+          )
+        ]),
       ),
     );
   }
