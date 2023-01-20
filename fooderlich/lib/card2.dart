@@ -21,7 +21,7 @@ class Card2 extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.7),
-                borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                borderRadius: const BorderRadius.all(Radius.circular(10.0))),
             child: Column(children: [
               const AuthorCard(
                 authorName: "Mike Kartz",
