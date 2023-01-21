@@ -17,7 +17,5 @@ class DifferenceOfSquares {
     return result;
   }
 
-  num differenceOfSquares(int n) {
-    return squareOfSum(n) - sumOfSquares(n);
-  }
+  num differenceOfSquares(int n) => squareOfSum(n) - sumOfSquares(n);
 }
