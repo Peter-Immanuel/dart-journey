@@ -18,7 +18,7 @@ class ExploreRecipe {
   String authorName;
   String role;
   String profileImage;
-  int durationInMins;
+  int durationInMinutes;
   String dietType;
   int calories;
   List<String> tags;
@@ -38,7 +38,7 @@ class ExploreRecipe {
     this.authorName = '',
     this.role = '',
     this.profileImage = '',
-    this.durationInMins = 0,
+    this.durationInMinutes = 0,
     this.dietType = '',
     this.calories = 0,
     this.tags = const [],
@@ -75,7 +75,7 @@ class ExploreRecipe {
         authorName: json["authorName"] ?? '',
         role: json["role"] ?? '',
         profileImage: json["profileImage"] ?? '',
-        durationInMins: json["durationInMins"] ?? '',
+        durationInMinutes: json["durationInMinutes"] ?? 0,
         dietType: json["dietType"] ?? '',
         calories: json["calories"] ?? 0,
         tags: json['tags'].cast<String>() ?? [],

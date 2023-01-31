@@ -8,7 +8,8 @@ class MockFooderlichService {
     final todayRecipes = await _getTodayRecipes();
     final friendPosts = await _getFriendPosts();
 
-    return ExploreData(todayRecipes, friendPosts);
+    ExploreData data = ExploreData(todayRecipes, friendPosts);
+    return data;
   }
 
   Future<List<ExploreRecipe>> _getTodayRecipes() async {
