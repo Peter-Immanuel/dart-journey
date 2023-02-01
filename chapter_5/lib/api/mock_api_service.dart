@@ -39,9 +39,10 @@ class MockFooderlichService {
         await _loadAssets("assets/sample_data/sample_friends_feed.json");
 
     final Map<String, dynamic> json = jsonDecode(dataString);
-    if (json["feeds"] != null) {
+
+    if (json["feed"] != null) {
       final feeds = <Post>[];
-      json["feeds"].forEach((feed) {
+      json["feed"].forEach((feed) {
         feeds.add(Post.fromJson(feed));
       });
       return feeds;

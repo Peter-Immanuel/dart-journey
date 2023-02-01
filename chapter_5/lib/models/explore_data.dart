@@ -2,7 +2,7 @@ import 'models.dart';
 
 class ExploreData {
   final List<ExploreRecipe> todayRecipes;
-  final List<Post> friendsPost;
+  final List<Post> friendPost;
 
-  ExploreData(this.todayRecipes, this.friendsPost);
+  ExploreData(this.todayRecipes, this.friendPost);
 }

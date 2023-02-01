@@ -3,22 +3,22 @@ class Post {
   String profileImageUrl;
   String comment;
   String foodPictureUrl;
-  String timeStamp;
+  String timestamp;
 
   Post(
       {required this.id,
       required this.profileImageUrl,
       required this.comment,
       required this.foodPictureUrl,
-      required this.timeStamp});
+      required this.timestamp});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
-      id: json["id"] ?? "",
+      id: json["id"] ?? '',
       profileImageUrl: json["profileImageUrl"] ?? '',
       comment: json["comment"] ?? '',
       foodPictureUrl: json["foodPictureUrl"] ?? '',
-      timeStamp: json["timeStamp"],
+      timestamp: json["timestamp"] ?? '',
     );
   }
 }

@@ -13,21 +13,22 @@ class ExploreScreen extends StatelessWidget {
     return FutureBuilder(
       future: mockService.getExploreData(),
       builder: (context, AsyncSnapshot<ExploreData> snapshot) {
-        // TODO Add Nested List Views
-
-        if (snapshot.connectionState == ConnectionState.done &&
-            snapshot.hasError == false) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.hasError == true) {
+            return Center(
+              child: Text('$snapshot.error'),
+            );
+          }
           return ListView(
             scrollDirection: Axis.vertical,
             children: [
               TodayRecipeListView(recipes: snapshot.data?.todayRecipes ?? []),
               const SizedBox(height: 16),
-
-              // TODO: Replace with FriendPostListView
-              Container(
-                height: 400,
-                color: Colors.green,
-              )
+              FriendPostListView(friendPosts: snapshot.data?.friendPost ?? []),
+              // Container(
+              //   height: 400,
+              //   color: Colors.green,
+              // )
             ],
           );
         } else {
