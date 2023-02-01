@@ -1,6 +1,5 @@
-import 'package:chapter_5/screens/recipes_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/explore_screen.dart';
+import 'screens/screens.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
@@ -15,7 +14,7 @@ class HomeState extends State<Home> {
   static List<Widget> pages = [
     ExploreScreen(),
     RecipesScreen(),
-    Container(color: Colors.blue),
+    GroceryScreen(),
   ];
 
   void _onItemTapped(int index) {
