@@ -55,7 +55,7 @@ class MockFooderlichService {
     await Future.delayed(const Duration(milliseconds: 2000));
 
     final dataString =
-        await _loadAssets("assets/sample_data/sample_recipies.json");
+        await _loadAssets("assets/sample_data/sample_recipes.json");
 
     // After getting response from server in json you need to change
     // it into the required object format for consumption within your application

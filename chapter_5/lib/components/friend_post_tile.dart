@@ -26,7 +26,7 @@ class FriendPostTile extends StatelessWidget {
           children: [
             Text(post.comment),
             Text(
-              '${post.timestamp} mins',
+              '${post.timestamp} mins ago',
               style: const TextStyle(fontWeight: FontWeight.w700),
             )
           ],
