@@ -1,3 +1,5 @@
+import '../models/models.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class EmptyGroceryScreen extends StatelessWidget {
@@ -36,11 +38,11 @@ class EmptyGroceryScreen extends StatelessWidget {
                 textColor: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                child: const Text("Browse Recipes"),
                 color: Colors.green,
                 onPressed: () {
-                  // TODO: 8 go to new recipe tab
-                })
+                  Provider.of<TabManager>(context, listen: false).goToRecipe();
+                },
+                child: const Text("Browse Recipes")),
           ],
         ),
       ),
