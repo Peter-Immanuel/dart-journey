@@ -19,7 +19,7 @@ class HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<TabManager>(builder: (context, value, child) {
+    return Consumer<TabManager>(builder: (context, tabManager, child) {
       return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -27,13 +27,16 @@ class HomeState extends State<Home> {
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
-        body: pages[value.selectedTab],
+        body: IndexedStack(
+          index: tabManager.selectedTab,
+          children: pages,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor:
               Theme.of(context).textSelectionTheme.selectionColor,
-          currentIndex: value.selectedTab,
+          currentIndex: tabManager.selectedTab,
           onTap: (index) {
-            return value.goToTab(index);
+            return tabManager.goToTab(index);
           },
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

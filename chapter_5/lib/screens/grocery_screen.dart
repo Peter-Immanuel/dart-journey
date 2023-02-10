@@ -20,7 +20,6 @@ class GroceryScreen extends StatelessWidget {
               builder: (context) => GroceryItemScreen(
                   onCreate: (item) {
                     manager.addItem(item);
-                    print(item);
                     Navigator.pop(context);
                   },
                   onUpdate: (item) {}),
@@ -33,11 +32,9 @@ class GroceryScreen extends StatelessWidget {
   }
 
   Widget buildGroceryScreen() {
-    return Consumer<GroceryManager>(builder: (context, value, child) {
-      if (value.groceryItems.isNotEmpty) {
-        return Container(
-          color: Colors.green,
-        );
+    return Consumer<GroceryManager>(builder: (context, manager, child) {
+      if (manager.groceryItems.isNotEmpty) {
+        return GroceryListScreen(manager: manager);
       } else {
         return const EmptyGroceryScreen();
       }

@@ -27,7 +27,7 @@ class GroceryItemScreen extends StatefulWidget {
 class _GroceryItemScreenState extends State<GroceryItemScreen> {
   final _nameController = TextEditingController();
 
-  String _name = 'Meat 🧂';
+  String _name = '';
   Importance _importance = Importance.low;
   DateTime _dueDate = DateTime.now();
   TimeOfDay _timeOfDay = TimeOfDay.now();
@@ -70,9 +70,9 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: Icon(Icons.check),
+            icon: const Icon(Icons.check),
             onPressed: () {
-              // TODO: Add callback handler
+              // create a grocery item from the variables
               final groceryItem = GroceryItem(
                 id: widget.originalItem?.id ?? const Uuid().v1(),
                 name: _nameController.text,
