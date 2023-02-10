@@ -9,7 +9,7 @@ class GroceryItem {
   final Color color;
   final int quantity;
   final DateTime date;
-  final bool isCompleted;
+  final bool isComplete;
 
   GroceryItem(
       {required this.id,
@@ -18,7 +18,7 @@ class GroceryItem {
       required this.color,
       required this.quantity,
       required this.date,
-      required this.isCompleted});
+      this.isComplete = false});
 
   GroceryItem copyWith(
       {String? id,
@@ -27,7 +27,7 @@ class GroceryItem {
       Color? color,
       int? quantity,
       DateTime? date,
-      bool? isCompleted}) {
+      bool? isComplete}) {
     return GroceryItem(
         id: id ?? this.id,
         name: name ?? this.name,
@@ -35,6 +35,6 @@ class GroceryItem {
         color: color ?? this.color,
         quantity: quantity ?? this.quantity,
         date: date ?? this.date,
-        isCompleted: isCompleted ?? this.isCompleted);
+        isComplete: isComplete ?? this.isComplete);
   }
 }
